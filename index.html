@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="chat">
+      <header>
+        <div class="perfil">
+          <div class="info-status">
+            <div>
+              <img src="././assets/avatar.svg" alt="imagem de perfil" />
+            </div>
+            <div class="info">
+              <h1>Cecilia Sassaki</h1>
+              <div class="status">
+                <div class="point"></div>
+                <p>Online</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="././assets/close.svg" alt="" />
+          </div>
+        </div>
+      </header>
+
+      <div id="messages">
+        <div class="today">
+          <p>Hoje 11:30</p>
+        </div>
+        <div class="received">
+          <p>Cecilia - 11:30</p>
+          <div class="message-r message">
+            <p>Tive uma ideia incrível para um projeto! 😍</p>
+          </div>
+        </div>
+        <div class="sent">
+          <p>Você - 11:32</p>
+          <div class="message-s message"><p>Sério? Me conta mais.</p></div>
+        </div>
+        <div class="received">
+          <p>Cecilia - 11:34</p>
+          <div class="message-r message">
+            <p>
+              E se a gente fizesse um chat moderno e responsivo em apenas uma
+              semana?
+            </p>
+          </div>
+        </div>
+        <div class="sent">
+          <p>Você - 11:36</p>
+          <div class="message-s message"><p>#boraCodar! 🚀</p></div>
+        </div>
+        <div class="received">
+          <p>Cecilia - 11:30</p>
+          <div class="message-r message">
+            <p>Tive uma ideia incrível para um projeto! 😍</p>
+          </div>
+        </div>
+        <div class="sent">
+          <p>Você - 11:32</p>
+          <div class="message-s message"><p>Sério? Me conta mais.</p></div>
+        </div>
+        <div class="received">
+          <p>Cecilia - 11:34</p>
+          <div class="message-r message">
+            <p>
+              E se a gente fizesse um chat moderno e responsivo em apenas uma
+              semana?
+            </p>
+          </div>
+        </div>
+        <div class="sent">
+          <p>Você - 11:36</p>
+          <div class="message-s message"><p>#boraCodar! 🚀</p></div>
+        </div>
+        <div id="here"></div>
+      </div>
+
+      <div id="to-sent">
+        <input
+          type="text"
+          name=""
+          id="input"
+          placeholder="Digite sua mensagem"
+        />
+        <!-- <button type="submit" onclick="sentMessage()" id="senting"> -->
+          <img src="././assets/send.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function sentMessage() {
+        
+        const messages = document.querySelectorAll("#messages");
+
+        let input = document.getElementById("input");
+        let text = input.value;
+        
+        document.getElementById("input").value = "";
+        const dataAtual = new Date();
+        const horas = dataAtual.getHours();
+        const minutos = dataAtual.getMinutes();
+
+        document.getElementById("here").innerHTML = `<div class="sent">
+          <p>Você - ${horas + ":" + minutos}</p>
+          <div class="message-s message"><p>${text}</p></div>
+        </div>`;
+
+        // const element = document.createElement("div");
+
+        // element.classList = "sent";
+        // element.innerHTML = "hello"//`<p>Você - ${horas + ":" + minutos}</p>
+        // //    <div class="message-s message"><p>${text}</p></div>`;
+
+        // document.messages.createElement(element);
+      }
+    </script>
+  </body>
+</html>
