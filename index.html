@@ -73,20 +73,6 @@
           <p>Você - 11:32</p>
           <div class="message-s message"><p>Sério? Me conta mais.</p></div>
         </div>
-        <div class="received">
-          <p>Cecilia - 11:34</p>
-          <div class="message-r message">
-            <p>
-              E se a gente fizesse um chat moderno e responsivo em apenas uma
-              semana?
-            </p>
-          </div>
-        </div>
-        <div class="sent">
-          <p>Você - 11:36</p>
-          <div class="message-s message"><p>#boraCodar! 🚀</p></div>
-        </div>
-        <div id="here"></div>
       </div>
 
       <div id="to-sent">
@@ -96,38 +82,11 @@
           id="input"
           placeholder="Digite sua mensagem"
         />
-        <!-- <button type="submit" onclick="sentMessage()" id="senting"> -->
+        <button type="submit" id="senting" onClick="sentMessage()">
           <img src="././assets/send.svg" alt="" />
         </button>
       </div>
     </div>
-
-    <script>
-      function sentMessage() {
-        
-        const messages = document.querySelectorAll("#messages");
-
-        let input = document.getElementById("input");
-        let text = input.value;
-        
-        document.getElementById("input").value = "";
-        const dataAtual = new Date();
-        const horas = dataAtual.getHours();
-        const minutos = dataAtual.getMinutes();
-
-        document.getElementById("here").innerHTML = `<div class="sent">
-          <p>Você - ${horas + ":" + minutos}</p>
-          <div class="message-s message"><p>${text}</p></div>
-        </div>`;
-
-        // const element = document.createElement("div");
-
-        // element.classList = "sent";
-        // element.innerHTML = "hello"//`<p>Você - ${horas + ":" + minutos}</p>
-        // //    <div class="message-s message"><p>${text}</p></div>`;
-
-        // document.messages.createElement(element);
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
